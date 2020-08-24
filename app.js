@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
-const port = process.env.port || 3000;
+
 const app = express();
 const https=require("https");
 app.use(express.static("wwwRoot"));
@@ -63,7 +63,7 @@ app.post("/",(req,res)=>{
 
 
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log("App is listening on port " + port);
   });
 
